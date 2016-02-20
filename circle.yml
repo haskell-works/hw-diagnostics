@@ -1,0 +1,21 @@
+machine:
+  ghc:
+    version: 7.10.2
+
+dependencies:
+  cache_directories:
+    - "~/.stack"
+    - "~/.ghc"
+    - "~/.cabal"
+    - "~/stack-1.0.4-linux-x86_64/stack"
+  pre:
+    - ./install-stack.sh 1.0.4
+  override:
+    - stack setup
+    - stack clean
+    - stack build
+
+test:
+  override:
+    - stack clean
+    - stack test
