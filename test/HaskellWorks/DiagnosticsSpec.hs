@@ -7,4 +7,4 @@ import           Test.Hspec
 spec :: Spec
 spec = describe "HaskellWorks.DiagnosticsSpec" $ do
   it "Not a test" $
-    1 `shouldBe` 1
+    (1 :: Int) `shouldBe` 1
