@@ -5,9 +5,12 @@ module HaskellWorks.Diagnostics.Time where
 import           System.CPUTime
 
 measure :: a -> IO a
-measure a = do
+measure a = measureIO (return a)
+
+measureIO :: IO a -> IO a
+measureIO a = do
   start <- getCPUTime
-  let !b = a
+  !b <- a
   end   <- getCPUTime
-  print (end - start)
+  putStrLn $ show ((end - start) `div` 1000000000) ++ " ms"
   return b
