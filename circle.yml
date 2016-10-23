@@ -1,20 +1,17 @@
-machine:
-  post:
-    - curl https://nixos.org/nix/install | sh
 
 dependencies:
   cache_directories:
-    - "~/.cabal"
-    - "~/.ghc"
+    - "~/.stack"
   pre:
-    - cp ./scripts/* ~/bin/
+    - wget -qO- https://get.haskellstack.org/ | sh
   override:
-    - nox when deps nix-mk
-    - nox when deps nix-deps
+    - stack setup
+    - stack clean
+    - stack build
 
 test:
   override:
-    - nox when build nix-build
+    - stack test
 
 deployment:
   release_branch:
@@ -27,4 +24,6 @@ deployment:
     owner: haskell-works
     tag: /v.*/
     commands:
-      - nox when deploy nix-shell shell.nix --command publish
+      - ./scripts/setup-cred
+      - stack sdist
+      - stack upload .
