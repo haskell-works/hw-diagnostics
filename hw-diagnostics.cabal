@@ -1,9 +1,9 @@
 name:                   hw-diagnostics
 version:                0.0.0.4
-synopsis:               Conduits for tokenizing streams.
+synopsis:               Diagnostics library
 description:            Please see README.md
 homepage:               http://github.com/haskell-works/hw-diagnostics#readme
-license:                MIT
+license:                BSD3
 license-file:           LICENSE
 author:                 John Ky
 maintainer:             newhoggy@gmail.com
