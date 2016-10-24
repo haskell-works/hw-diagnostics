@@ -1,5 +1,5 @@
 name:                   hw-diagnostics
-version:                0.0.0.6
+version:                0.0.0.7
 synopsis:               Diagnostics library
 description:            Please see README.md
 homepage:               http://github.com/haskell-works/hw-diagnostics#readme
