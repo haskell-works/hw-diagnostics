@@ -24,8 +24,8 @@ workflows:
           context: haskell-ci
 
       - haskell/build:
-          name: GHC 8.8.1
-          executor: haskell/ghc-8_8_1
+          name: GHC 8.8.2
+          executor: haskell/ghc-8_8_2
           context: haskell-ci
 
       - github/release-cabal:
@@ -35,7 +35,7 @@ workflows:
             - GHC 8.2.2
             - GHC 8.4.4
             - GHC 8.6.4
-            - GHC 8.8.1
+            - GHC 8.8.2
           checkout: true
           filters:
             branches:
