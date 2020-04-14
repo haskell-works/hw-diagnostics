@@ -1,7 +1,7 @@
 cabal-version: 2.4
 
 name:                 hw-diagnostics
-version:              0.0.0.7
+version:              0.0.1.0
 synopsis:             Diagnostics library
 description:          Please see README.md
 category:             Profiling
